@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+  class Person
+    names = %w(joe chris dianna)
+
+    names.each do |name|
+      define_method "call_#{name}".to_sym do
+        puts "#{name} came"
+      end
+    end
+  end
+
+#Person.new.call_joe
+#Person.new.call_chris
+binding.pry
+puts Person.constants

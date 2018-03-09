@@ -6,7 +6,7 @@ FactoryBot.define do
   end
 
 
-  factory :pet do
+  factory :dog do
     add_attribute(:name) { Faker::Name.first_name }
     jump_height { rand(2.0..4.0) }
 

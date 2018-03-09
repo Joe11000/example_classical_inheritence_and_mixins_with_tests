@@ -24,13 +24,3 @@ class Human < Animal
   # def extra_initializers args; end
 
 end
-
-
-# alias_method :super_class_initialize, :initialize
-
-# include Jumper
-
-# def initialize args
-#   super_class_initialize args
-#   super args.splice()
-# end

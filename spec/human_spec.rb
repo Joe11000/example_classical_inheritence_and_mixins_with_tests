@@ -1,5 +1,6 @@
 require_relative 'jumper_spec'
 require_relative 'animal_spec'
+# require_relative 'pet_role_spec'
 require_relative '../lib/human'
 require 'active_support/core_ext/object/instance_variables'
 require 'pry'
@@ -26,7 +27,6 @@ RSpec.describe Human do
   end
 
 end
-
 
 
 

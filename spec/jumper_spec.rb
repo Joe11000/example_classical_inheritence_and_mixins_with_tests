@@ -1,8 +1,3 @@
-require_relative '../lib/jumper'
-require_relative '../lib/human'
-require 'pry'
-
-
 require 'active_support/core_ext/module'
 
 RSpec.shared_examples 'Jumper' do |args={}|
@@ -20,3 +15,5 @@ RSpec.shared_examples 'Jumper' do |args={}|
     end
   end
 end
+
+
