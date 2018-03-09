@@ -19,6 +19,7 @@ class Dog < Animal
   alias_method :pet_role_module_initialize, :initialize
 
   def initialize args # { args: {:owner, :likes_to_be_touched, :jump_height, :name } }
+    # binding.pry
     pet_role_module_initialize( args.slice(:owner, :likes_to_be_touched) )
     jumper_module_initialize( args.slice(:jump_height) || { jump_height: rand(2.0..4.0) })
     super_class_initialize( args.slice(:name) )

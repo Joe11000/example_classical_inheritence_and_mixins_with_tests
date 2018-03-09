@@ -17,12 +17,13 @@ RSpec.shared_examples 'PetRole' do
     #   end
     # end
 
-    context '::pets_in_the_world' do
-      it 'is 0 by default and changes to 1 when' do
-        binding.pry
-        expect(described_class.pet_count).to eq 0
-        expect { FactoryBot.build(described_class.to_s.downcase.to_sym) }.to change {described_class.pet_count}.from(0).to(1)
-        expect { described_class.increment_count}.to change {described_class.pet_count}.from(1).to(2)
+    context '::pet_count' do
+      it 'is incremented after every initialization' do
+        expect(PetRole::ClassMethods::pet_count).to be_an Integer
+      end
+
+      it 'is incremented after every initialization' do
+        expect { PetRole::ClassMethods.send(:increment_count) }.to change {PetRole::ClassMethods::pet_count}.by 1
       end
     end
   end
@@ -32,6 +33,8 @@ RSpec.shared_examples 'PetRole' do
     context '#name' do
       it "is overwitten and returns the owner's name" do
         expect(pet.name).to be_a String
+        # binding.pry
+        PetRole::ClassMethods::pet_count
       end
     end
 
